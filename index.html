@@ -118,7 +118,6 @@
             this.colors = colors;
             this.gameOver = false;
             this.maxScore = maxScore;
-            this.totalScore = 0;
             this.board = this.createBoard();
             document.getElementById("control").style.top = (size*(row+0.5))+"vw";
             this.reset();
@@ -225,6 +224,7 @@
         }
 
         reset(){
+	    this.totalScore = 0;
             document.getElementById("notice").style.visibility = "hidden";
             for(let i=0;i<this.row;i++)
                 for(let j=0;j<this.col;j++)
