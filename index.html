@@ -9,7 +9,7 @@
     <style>
         body{
             overflow: hidden;
-	    background-color: lightgray;
+            background-color: lightgray;
         }
         #board{
             position: relative;
@@ -66,7 +66,7 @@
             position: absolute;
             right: 15%;
         }
-        #font,#score,#reset,.btn{
+        .font,#score,#reset,.btn{
             font-size: 2vw;
             font-weight: bold;
         }
@@ -82,6 +82,7 @@
     <button class="btn" onclick="board.forwardAction(0,-1)" style="transform: translateX(-100%)">L</button>
     <button class="btn" onclick="board.reverseAction(0,1)" style="transform: translateX(100%)">R</button><br/>
     <button class="btn" onclick="board.reverseAction(1,0)">D</button>
+    <div style="font-weight: bold;font-size: 2vw;position: absolute;opacity: 0.5;">Use arrow keys in desktop</div>
 </div>
 <div id="notice">
     <div class="inner">You Loose</div>
@@ -225,7 +226,7 @@
         }
 
         reset(){
-	    this.totalScore = 0;
+            this.totalScore = 0;
             document.getElementById("notice").style.visibility = "hidden";
             for(let i=0;i<this.row;i++)
                 for(let j=0;j<this.col;j++)
@@ -239,6 +240,19 @@
     let colors = {0:"darkgray",2:"rgb(238, 228, 218)",4:"rgb(237, 224, 200)",8:"rgb(242, 177, 121)",16:"rgb(245, 149, 99)",32:"rgb(246, 124, 95)",64:"rgb(246, 94, 59)",128:"rgb(237, 207, 114)",
         256:"#FFF056",512:"#99CD4E",1024:"#F1684E",2048:"#E25D33"};
     let board = new Board(4,4,12,colors,2048);
+    window.onkeyup = function(e) {
+        let key = e.keyCode ? e.keyCode : e.which;
+
+        if (key == 38) {
+            board.forwardAction(-1,0);
+        }else if (key == 40) {
+            board.reverseAction(1, 0);
+        }else if (key == 37) {
+            board.forwardAction(0,-1);
+        }else if (key == 39) {
+            board.forwardAction(0,1);
+        }
+    }
 </script>
 </body>
 </html>
