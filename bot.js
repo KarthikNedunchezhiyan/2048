@@ -209,6 +209,6 @@ function On_Off_Bot(){
 }
 
 let speed = 5;
-let accuracy = 6;
+let accuracy = 5;
 let bot = new Bot(board,accuracy);
 let interval = null;
