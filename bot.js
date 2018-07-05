@@ -208,7 +208,13 @@ function On_Off_Bot(){
     }
 }
 
+let accuracy = 6;
+if (typeof window.orientation !== 'undefined') {
+    accuracy = 5;
+    document.getElementById("msg").innerText="Accuracy reduced in mobiles due to performance issue!";
+}
+
 let speed = 5;
-let accuracy = 5;
+
 let bot = new Bot(board,accuracy);
 let interval = null;

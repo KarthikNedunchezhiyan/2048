@@ -150,6 +150,7 @@ class Board{
 
     reset(){
         document.getElementById("notice").style.visibility = "hidden";
+        this.totalScore = 0;
         for(let i=0;i<this.row;i++)
             for(let j=0;j<this.col;j++)
                 this.board[i][j].value = this.board[i][j].resetValue;
