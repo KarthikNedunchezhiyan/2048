@@ -209,10 +209,10 @@ function On_Off_Bot(){
 }
 
 let accuracy = 6;
-//if (typeof window.orientation !== 'undefined') {
-//    accuracy = 5;
-//    document.getElementById("msg").innerText="Accuracy reduced in mobiles due to performance issue!";
-//}
+if (typeof window.orientation !== 'undefined') {
+    accuracy = 5;
+    document.getElementById("msg").innerText="Accuracy reduced in mobiles due to performance issue!";
+}
 
 let speed = 5;
 
